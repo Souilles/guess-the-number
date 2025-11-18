@@ -13,34 +13,35 @@ def play_again():
         play=input("please answer with yes or no: ")
     return play
 
-while play=="yes":
+if __name__ == "__main__":
+    while play=="yes":
 
-    lives=7
-    number=random.randint(1,100)
-    print("I'm thinking of a number between 1 and 100, can you guess it ?")
-    print("You've got",lives,"attemptss")
-    guess=user_guess()
-    while guess!=number and lives>1:
-        if guess>number:
-            print("Too high !")
-            lives=lives-1
-            print("You've still got",lives,"attempts")
-            guess=user_guess()
+        lives=7
+        number=random.randint(1,100)
+        print("I'm thinking of a number between 1 and 100, can you guess it ?")
+        print("You've got",lives,"attemptss")
+        guess=user_guess()
+        while guess!=number and lives>1:
+            if guess>number:
+                print("Too high !")
+                lives=lives-1
+                print("You've still got",lives,"attempts")
+                guess=user_guess()
             
-        else:
-            print("Too low !")
-            lives=lives-1
-            print("You've still got",lives,"attempts")
-            guess=user_guess()       
+            else:
+                print("Too low !")
+                lives=lives-1
+                print("You've still got",lives,"attempts")
+                guess=user_guess()       
     
-    if guess==number:
-        print("Congrats, you win ! :)")
-    else:
-        print("You lost ! The number was",number)
+        if guess==number:
+            print("Congrats, you win ! :)")
+        else:
+            print("You lost ! The number was",number)
 
-    play=play_again()
+        play=play_again()
 
-if play=="no":
-    print("Okay ! Have a nice day !")
+    if play=="no":
+        print("Okay ! Have a nice day !")
 
 
