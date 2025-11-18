@@ -15,18 +15,28 @@ def play_again():
 
 while play=="yes":
 
+    lives=7
     number=random.randint(1,100)
     print("I'm thinking of a number between 1 and 100, can you guess it ?")
+    print("You've got",lives,"attemptss")
     guess=user_guess()
-    while guess!=number:
+    while guess!=number and lives>1:
         if guess>number:
             print("Too high !")
+            lives=lives-1
+            print("You've still got",lives,"attempts")
             guess=user_guess()
+            
         else:
             print("Too low !")
-            guess=user_guess()
-
-    print("Congrats, you win ! :)")
+            lives=lives-1
+            print("You've still got",lives,"attempts")
+            guess=user_guess()       
+    
+    if guess==number:
+        print("Congrats, you win ! :)")
+    else:
+        print("You lost ! The number was",number)
 
     play=play_again()
 
