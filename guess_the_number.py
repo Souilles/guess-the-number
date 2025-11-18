@@ -19,7 +19,7 @@ if __name__ == "__main__":
         lives=7
         number=random.randint(1,100)
         print("I'm thinking of a number between 1 and 100, can you guess it ?")
-        print("You've got",lives,"attemptss")
+        print("You've got",lives,"attempts")
         guess=user_guess()
         while guess!=number and lives>1:
             if guess>number:
